@@ -6,15 +6,18 @@
 package com.challange.groceryhelper.service;
 
 import com.challange.groceryhelper.domain.GroceryItem;
+import java.util.List;
 
 /**
  *
  * @author SArgade
  */
-public interface GroceryItemService {
+public interface GroceryHelperService {
     
-    public Boolean saveGroceryItem(GroceryItem groceryItem);
+    public GroceryItem saveGroceryItem(GroceryItem groceryItem);
+    
+    public GroceryItem findGroceryItemByName(String groceryItemName);
     
     public Boolean deleteGroceryItem(GroceryItem groceryItem);
-    
+    public List<GroceryItem> findAllGroceryItems();
 }

@@ -6,11 +6,14 @@
 package com.challange.groceryhelper.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author SArgade
  */
-public interface GroceryItemRepositoy extends JpaRepository<GroceryItem, Long> {
-    
+@Repository("GroceryItemRepository")
+public interface GroceryItemRepository extends JpaRepository<GroceryItem, Long> {
+ 
+   GroceryItem findByName(String name);   
 }

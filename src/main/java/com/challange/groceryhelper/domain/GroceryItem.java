@@ -20,12 +20,15 @@ import org.springframework.lang.NonNull;
 @Table(name = "grocery_item")
 public class GroceryItem {
 
+   
+
     @Id
     @GeneratedValue
     @Column(name = "Id", nullable = false)
     private Long id;
     //private Long brandID;
-    @Column(name = "item_name", nullable = false)
+    
+    @Column(name = "item_name", nullable = false,unique=true)
     private String name;
     @Column(name = "item_description", nullable = false)
     private String description;
@@ -42,6 +45,15 @@ public class GroceryItem {
      */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public GroceryItem(Long id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+    
+     public GroceryItem() {
     }
 
     /**
